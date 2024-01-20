@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guvercin Logger</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      code {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #f4f4f4;
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+
+      pre {
+        background-color: #f8f8f8;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+
+  <body style="width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px">
+    <center>
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 722.6 515.8"
+        style="enable-background: new 0 0 722.6 515.8"
+        xml:space="preserve"
+        width="200"
+      >
+        <style type="text/css">
+          .st0 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            fill: #ef4444;
+          }
+        </style>
+        <path
+          class="st0"
+          d="M0.9,117.6c0,0,70.9-9.1,70.9,82.4S67,646.4,596,464.8c0,0-140.5-10.7-197-75.1c0,0,132.9-5.5,190.8-189.4
+   S722.6,36,722.6,36S481.4-56.3,364.8,54.6S260.2,174.1,219.8,157S156.5,39.3,71.6,47S0.9,117.6,0.9,117.6z"
+        />
+      </svg>
+    </center>
+
+    <h1>Guvercin Logger</h1>
+    <p>
+      Guvercin is a simple logger library for Node.js. It provides an easy way to log messages with different log
+      levels.
+    </p>
+
+    <h2>Installation</h2>
+    <pre><code>pnpm install guvercin</code></pre>
+
+    <h2>Usage (CommonJS)</h2>
+    <pre><code>const { Guvercin } = require('guvercin');
+
+const guvercin = new Guvercin({
+    hideTime: true,
+    jsonOutput: true,
+    logPath: './logs.json',
+    saveToLocal: true,
+    separator: '@',
+    timeFormat: 'DD/MM/YYYY HH:mm:ss',
+    name: 'BACKEND',
+});
+
+guvercin.debug('This is a debug message');
+guvercin.error('This is an error message');
+guvercin.info('This is an info message');
+guvercin.success('This is a success message');
+guvercin.warning('This is a warning message');</code></pre>
+
+    <h2>Usage (ES6)</h2>
+    <pre><code>import { Guvercin } from 'guvercin';
+
+const guvercin = new Guvercin({
+    hideTime: true,
+    jsonOutput: true,
+    logPath: './logs.json',
+    saveToLocal: true,
+    separator: '@',
+    timeFormat: 'DD/MM/YYYY HH:mm:ss',
+    name: 'BACKEND',
+});
+
+guvercin.debug('This is a debug message');
+guvercin.error('This is an error message');
+guvercin.info('This is an info message');
+guvercin.success('This is a success message');
+guvercin.warning('This is a warning message');</code></pre>
+
+    <h2>Configuration via guvercin.config.json</h2>
+    <p>You can create a <code>guvercin.config.json</code> file in your project root with the following options:</p>
+    <pre><code>{
+    "hideTime": true,
+    "jsonOutput": true,
+    "logPath": "./logs.json",
+    "saveToLocal": true,
+    "separator": "@",
+    "timeFormat": "DD/MM/YYYY HH:mm:ss",
+    "name": "FRONTEND"
+}</code></pre>
+
+    <p>
+      <strong>Note:</strong> Options passed to the Guvercin constructor will override the ones in
+      <code>guvercin.config.json</code>.
+    </p>
+  </body>
+</html>
